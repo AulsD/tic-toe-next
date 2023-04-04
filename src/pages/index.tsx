@@ -39,10 +39,10 @@ function Board({ xIsNext, squares, onPlay}: AppProps) {
 	}
 
 	const nextSquares = squares.slice();
-	if (xIsNext) {
+	/*if (xIsNext) {
 		nextSquare[i] = 'X';
 	}
-
+	*/
 	return (
 		<>
 			<div className="status">{status}</div>
