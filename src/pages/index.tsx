@@ -6,6 +6,13 @@ import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
+type AppProps  = {
+	xIsNext: string;
+	squares: number;
+	onSquareClick: () => void;
+	value: number;
+}
+
 export default function Home() {
 	return (
 		<>
@@ -14,7 +21,7 @@ export default function Home() {
 	)
 }
 
-function Square({value, onSquareClick}){
+function Square({value, onSquareClick}: AppProps){
 	return (
 		<button className="square" onClick={onSquareClick}>
 			{value}
@@ -22,8 +29,19 @@ function Square({value, onSquareClick}){
 	)
 }
 
-function Board({ xIsNext, squares, onPlay}) {
-	
+function Board({ xIsNext, squares, onPlay}: AppProps) {
+	function handleClick(){
+		if (calculateWinner(squares) || squares[i] ) {
+			return;
+		}
+
+	}
+
+	const nextSquares = squares.slice();
+	if (xIsNext) {
+		nextSquare[i] = 'X';
+	}
+
 	return (
 		<>
 			<div className="status">{status}</div>
