@@ -15,6 +15,23 @@ type AppProps  = {
 }
 
 export default function Home() {
+	const [xIsNext, setXIsNext] = useState(true);
+	const [history, setHistory] = useState([Array(9).fill(null)]);
+	const [currentMove, setCurrentMove] = useState(0);
+	const currentSquares = history[currentMove];
+
+	function handlePlay(nextSquares) {
+		const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+		setHistory(nextHistory);
+		setCurrentMove(nextHistory.length - 1);
+
+	}
+
+	function jumpTo(nextMove) {
+		setCurrentMove(nextMove);
+	}
+
+
 	return (
 		<>
 		  <h1>Tic Tac Toe</h1>
@@ -31,12 +48,12 @@ function Square({value, onSquareClick}: AppProps){
 }
 
 function Board({ xIsNext, squares, onPlay}: AppProps) {
-	/*function handleClick(){
-		if (calculateWinner(squares)  ) {
+	function handleClick(){
+		if (calculateWinner(squares) || squares[i]  ) {
 			return;
 		}
 
-	}*/
+	}
 
 	const nextSquares = squares.slice();
 	/*if (xIsNext) {
@@ -46,9 +63,25 @@ function Board({ xIsNext, squares, onPlay}: AppProps) {
 	return (
 		<>
 			<div className="status">{status}</div>
+			<div className="board-now">
+				<Square value={square[0]} onSquareClick={() => handleClick(0)} />
+				<Square value={square[1]} onSquareClick={() => handleClick(1)} />
+				<Square value={square[2]} onSquareClick={() => handleClick(2)} />
+			</div>
+			<div className="board-now" >
+				<Square value={square[3]} onSquareClick={() => handleClick(3)} />
+				<Square value={square[4]} onSquareClick={() => handleClick(4)} />
+				<Square value={square[5]} onSquareClick={() => handleClick(5)} />
+			</div>
+			<div className="board-now" >
+				<Square value={square[6]} onSquareClick={() => handleClick(6)} />
+				<Square value={square[7]} onSquareClick={() => handleClick(7)} />
+				<Square value={square[8]} onSquareClick={() => handleClick(8)} />
+			</div>
 		</>
 	)
 }
+
 
 function calculateWinner({squares}: AppProps) {
 	const lines = [
