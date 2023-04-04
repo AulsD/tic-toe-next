@@ -31,12 +31,12 @@ function Square({value, onSquareClick}: AppProps){
 }
 
 function Board({ xIsNext, squares, onPlay}: AppProps) {
-	function handleClick(){
+	/*function handleClick(){
 		if (calculateWinner(squares)  ) {
 			return;
 		}
 
-	}
+	}*/
 
 	const nextSquares = squares.slice();
 	/*if (xIsNext) {
