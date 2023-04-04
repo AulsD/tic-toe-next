@@ -32,7 +32,7 @@ function Square({value, onSquareClick}: AppProps){
 
 function Board({ xIsNext, squares, onPlay}: AppProps) {
 	function handleClick(){
-		if (calculateWinner(squares) || squares[i] ) {
+		if (calculateWinner(squares)  ) {
 			return;
 		}
 
