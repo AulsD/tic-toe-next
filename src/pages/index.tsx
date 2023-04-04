@@ -50,7 +50,7 @@ function Board({ xIsNext, squares, onPlay}: AppProps) {
 	)
 }
 
-function calculateWinner(squares) {
+function calculateWinner({squares}: AppProps) {
 	const lines = [
 		[0,1,2],
 		[3,4,5],
