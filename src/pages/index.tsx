@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 type AppProps  = {
 	xIsNext: string;
-	squares: number;
+	squares: string[];
 	onSquareClick: () => void;
 	value: number;
 	onPlay: () => void;
