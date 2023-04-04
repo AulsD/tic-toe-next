@@ -11,6 +11,7 @@ type AppProps  = {
 	squares: number;
 	onSquareClick: () => void;
 	value: number;
+	onPlay: () => void;
 }
 
 export default function Home() {
