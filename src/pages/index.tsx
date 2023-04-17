@@ -8,7 +8,7 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 type AppProps  = {
-	xIsNext: string;
+	xIsNext: boolean;
 	squares: string[];
 	onSquareClick: () => void;
 	value: number;
