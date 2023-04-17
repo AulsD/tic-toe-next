@@ -17,7 +17,7 @@ type AppProps  = {
 }
 
 export default function Home() {
-	const [xIsNext, setXIsNext] = useState(true | null)<null>;
+	const [xIsNext, setXIsNext] = useState(true);
 	const [history, setHistory] = useState([Array(9).fill(null)]);
 	const [currentMove, setCurrentMove] = useState(0);
 	const currentSquares = history[currentMove];
