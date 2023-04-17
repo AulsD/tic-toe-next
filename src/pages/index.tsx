@@ -22,12 +22,13 @@ export default function Home() {
 	const [currentMove, setCurrentMove] = useState(0);
 	const currentSquares = history[currentMove];
 
+  /*
 	function handlePlay(nextSquares) {
 		const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
 		setHistory(nextHistory);
 		setCurrentMove(nextHistory.length - 1);
 
-	}
+	}*/
   
   function jumpTo({nextMove}: AppProps) {
     setCurrentMove(nextMove);
@@ -54,7 +55,7 @@ export default function Home() {
       </div> 
       <div className="game">
         <div className="game-board">
-          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={() => console.log("test button")} />
         </div>
         <div className="game-info">
           <ol>{moves}</ol>
@@ -137,10 +138,9 @@ function calculateWinner(squares ) {
 
 	for (let i = 0; i < lines.length; i++) {
 		const [a, b, c] = lines[i];
-//    console.log(a, 'checking ')
-		if (squares[a] && squares[a] === squares[b] && squares[a] == squares[c] ){
-			return squares[a];
-		}
+		//if (squares[a] && squares[a] === squares[b] && squares[a] == squares[c] ){
+		//	return squares[a];
+		//}
 	}
 
 	return null;
