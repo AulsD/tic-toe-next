@@ -43,7 +43,7 @@ export default function Home() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button onClick={() => console.log("check jumpss")}>{description}</button>
       </li>
     );
   });
