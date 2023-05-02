@@ -178,8 +178,27 @@ ul {
   margin-left: 20px;
 }
 
+.grid{
+  display: grid;
+  grid-gap: 1px; 
+  grid-template-columns: repeat(3, 0fr);
+}
+
+.reset{
+  margin-top: 2rem;
+  font-size: 1rem;
+  background-color: aqua;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: blue;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
+
