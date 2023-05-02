@@ -1,9 +1,10 @@
+
 type Player = "X" | "O" | "BOTH" | "null";
 
 function Square({
   winner,
+  onClick,
   value,
-  onClick
 }: {
   winner: Player;
   value: Player;
